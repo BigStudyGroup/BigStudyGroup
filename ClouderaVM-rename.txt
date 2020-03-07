@@ -1,0 +1,32 @@
+Renaming Cloudera VM NAME 
+
+1) Rename the hostname of the Cloudera machine to custom name 
+from quickstart.cloudera  to BSGMasterNode.bigstudygroup.com
+# hostname BSGMasterNode.bigstudygroup.com
+
+2) Update the /etc/resolv.conf file with the domain name. 
+
+# vi /etc/resolve.conf 
+
+and enter  BSGMasterNode.bigstudygroup.com  in place of Cloudera
+
+3) setup static ip and restart netowrk. 
+
+4) Back up the agent default config file and apply the changes. 
+
+
+
+# Shutdown order in the Sys V init system (reverse of the Startup order)
+CDH_SERVICES="kafka-server impala-server impala-catalog sqoop-metastore solr-server oozie impala-state-store hue flume-ng-agent hbase-regionserver sqoop2-server spark-history-server sentry-store hive-server2 hive-metastore hbase-thrift hbase-rest hbase-master hadoop-yarn-resourcemanager hadoop-yarn-proxyserver hadoop-yarn-nodemanager hadoop-mapreduce-historyserver hadoop-httpfs hadoop-hdfs-secondarynamenode hadoop-hdfs-namenode hadoop-hdfs-journalnode hadoop-hdfs-datanode hbase-solr-indexer zookeeper-server"
+CM_SERVICES="cloudera-scm-server cloudera-scm-agent"
+
+
+
+BSGMasterNode.bigstudygroup.com  -  192.168.65.134
+
+BSGWorkerNode1.bigstudygroup.com -  192.168.65.135
+
+BSGWorkerNode2.bigstudygroup.com - 192.168.65.136
+
+
+sed -i 's/quickstart.cloudera/BSGWorkerNode1.bigstudygroup.com/g' express-deployment.json
