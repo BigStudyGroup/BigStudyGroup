@@ -1,0 +1,70 @@
+
+How to Get Create, Push and pull from Private Gitrepo. 
+
+
+Prerequisites : -
+
+1) Need to have id on Github, Create one.
+2) Need to know the name of the private Git Repo.  https://github.com/BigStudyGroup/BigStudyGroup
+3) Owner of the Private repo should provide you access to the repo. 
+
+
+
+Tools Needed: 
+-> Gitbash or GitGui or any similar tool  for initialising local project, syncing project to git, pulling and pushing file to the private repo. 
+
+
+
+
+Procedure to initialise the project locally. 
+
+Assuming you already have a github user id. 
+
+-> Open Git bash 
+-> Navigate to the local directory where you want to initiate your project. 
+   Example, in my case it is "D:/BigStudyGroup-Development/BigStudyGroup"
+   
+Note: It would be easy to perform git command and sync activities if we setup ssh-keys between git and you id locally. 
+
+Procedure for Generating a new SSH key would be as below.
+
+1) Open Git Bash.
+
+2) Paste the text below, substituting in your GitHub email address.
+# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+This creates a new ssh key, using the provided email as a label.
+
+3) Generating public/private rsa key pair.
+When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+4) Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+At the prompt, type a secure passphrase. 
+
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+
+Copy the contents of "/c/Users/you/.ssh/id_rsa"  file to you account in git under https://github.com/settings/keys
+-Click on New SSH key
+- Give name to the key file 
+- Copy paste the contents of /c/Users/you/.ssh/id_rsa. And Save.
+
+References:- 
+
+https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases 
+https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+Once the ssh-keys are uploaded to git. It is time to initiate the  git project. 
+
+
+Cloning and Adding files to github
+
+1) Via Gitbash, Navigate to the local directory where you want to initiate your project.
+2) git init
+3) git clone git@github.com:BigStudyGroup/BigStudyGroup.git
+3) git config --global user.name "<github userid"
+4) git config --global user.email "<github-user-emailid@someplace.com>"
+5) git add *   or  git add <particular file>
+6) git commit -m "some init msg"
+7) git push origin master
+
