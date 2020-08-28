@@ -1,3 +1,6 @@
+<?php
+include("config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,9 +26,9 @@
                     &nbsp;
                     <i class="fa fa-search" aria-hidden="false"></i>
                     <ul>
-                        <li><button class="login"><a href="login.php">Login</a></button>
+                        <li><button class="logout"><a href="index.html">logout</a></button>
                         </li>
-                        <li><button class="login"><a href="signup.html">Signup</a></button>
+                        <li>Hi <?php echo($user_name);?>
                         </li>
                     </ul>
                 </div>
