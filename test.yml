@@ -1,0 +1,7 @@
+---
+- name: this is a test yaml file
+  hosts: localhost
+  tasks: 
+    - name: Ansible module for testing ping
+    - ping: 
+
